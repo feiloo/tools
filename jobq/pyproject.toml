@@ -1,0 +1,31 @@
+[build-system]
+requires = [
+  "setuptools",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jobq"
+version = "0.0.1"
+requires-python = ">=3.8"
+dependencies = [
+	"click",
+]
+
+[project.optional-dependencies]
+test = [
+	"pytest",
+	"mypy",
+	"pep8",
+	"coverage",
+	"build",
+	]
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests"
+    ]
+
+
+[project.scripts]
+jobq = "jobq.main:cli"
